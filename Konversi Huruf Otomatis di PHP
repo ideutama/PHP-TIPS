@@ -1,0 +1,26 @@
+<?php
+$teks = "Halo Dunia!";
+$mode = "acak"; // pilih: kecil, besar, kapital, awal, acak
+
+switch ($mode) {
+    case "kecil":
+        $hasil = strtolower($teks); // Output: halo dunia!
+        break;
+    case "besar":
+        $hasil = strtoupper($teks); // Output: HALO DUNIA!
+        break;
+    case "kapital":
+        $hasil = ucwords(strtolower($teks)); // Output: Halo Dunia!
+        break;
+    case "awal":
+        $hasil = ucfirst(strtolower($teks)); // Output: Halo dunia!
+        break;
+    case "acak":
+        $hasil = "";
+        for ($i = 0; $i < strlen($teks); $i++) {
+            $hasil .= (rand(0,1)) ? strtoupper($teks[$i]) : strtolower($teks[$i]);
+        }
+        break;
+}
+echo $hasil;
+?>

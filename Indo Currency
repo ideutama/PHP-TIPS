@@ -1,0 +1,13 @@
+<?php
+
+function indo_currency($value)
+{
+    return 'Rp. ' . number_format($value, 0, ",", ".") . ',-';
+}
+
+$uang = "5000000000";
+
+$konversi = indo_currency($uang);
+
+echo $konversi; // OUTPUT : Rp. 5.000.000.000,-
+?>

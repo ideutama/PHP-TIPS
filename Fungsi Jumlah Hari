@@ -1,0 +1,22 @@
+<?php
+
+function jumlah_hari($month, $year)
+{
+    // Validasi input
+    if (!is_numeric($month) || !is_numeric($year) || $month < 1 || $month > 12) {
+        show_error('Invalid month or year.');
+    }
+
+    // Menghitung jumlah hari dalam bulan tersebut
+    $days = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+
+    // Menampilkan hasil
+    //echo "Jumlah hari pada bulan {$month} tahun {$year} adalah: {$days} hari.";
+    return $days;
+}
+ 
+ 
+ $konversi = jumlah_hari(10,2025);
+ 
+ echo "Jumlah Hari untuk bulan Oktober 2025 adalah ". $konversi; // OUTPUT : Jumlah Hari untuk bulan Oktober 2025 adalah 31
+?>
